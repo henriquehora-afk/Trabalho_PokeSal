@@ -13,7 +13,7 @@ public class Batalha {
 
   private Treinador treinador1;
   private Treinador treinador2;
-  private Terreno terreno;
+  public Terreno terreno;
 
   /**
    * Construtor para iniciar a batalha.
