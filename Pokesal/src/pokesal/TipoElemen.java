@@ -5,19 +5,19 @@ package pokesal;
  */
 public class TipoElemen {
 
-    private String fogo = "Fogo";
-    private String agua = "Agua";
-    private String planta = "Planta";
+  private String fogo = "Fogo";
+  private String agua = "Agua";
+  private String planta = "Planta";
 
-    public String getFogo() {
-        return fogo;
-    }
+  public String getFogo() {
+    return fogo;
+  }
 
-    public String getAgua() {
-        return agua;
-    }
+  public String getAgua() {
+    return agua;
+  }
 
-    public String getPlanta() {
-        return planta;
-    }
+  public String getPlanta() {
+    return planta;
+  }
 }

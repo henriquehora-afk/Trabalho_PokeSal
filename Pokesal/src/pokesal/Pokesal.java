@@ -26,7 +26,8 @@ public class Pokesal {
    * @param tipo  tipo elemental
    * @param nome  nome do Pokesal
    */
-  public Pokesal(int hp, int atk, int def, int spd, int hpMax, String tipo, String nome, boolean queimado,
+  public Pokesal(int hp, int atk, int def, int spd, int hpMax, String tipo,
+                 String nome, boolean queimado,
                    boolean paralizado) {
     this.hp = hp;
     this.atk = atk;
@@ -55,18 +56,17 @@ public class Pokesal {
    * @param hp novos pontos de vida
    */
   public void setHp(int hp) {
-        this.hp = hp;
-    }
+    this.hp = hp;
+  }
 
   /**
-
    * Retorna o ataque.
    *
    * @return ataque
    */
   public int getAtk() {
-        return atk;
-    }
+    return atk;
+  }
 
   /**
    * Altera o ataque.
@@ -74,8 +74,8 @@ public class Pokesal {
    * @param atk novo ataque
    */
   public void setAtk(int atk) {
-        this.atk = atk;
-    }
+    this.atk = atk;
+  }
 
   /**
    * Retorna a defesa.
@@ -83,9 +83,8 @@ public class Pokesal {
    * @return defesa
    */
   public int getDef() {
-        return def;
-    }
-
+    return def;
+  }
 
   /**
    * Altera a defesa.
@@ -93,8 +92,8 @@ public class Pokesal {
    * @param def nova defesa
    */
   public void setDef(int def) {
-        this.def = def;
-    }
+    this.def = def;
+  }
 
   /**
    * Retorna a velocidade.
@@ -102,8 +101,8 @@ public class Pokesal {
    * @return velocidade
    */
   public int getSpd() {
-        return spd;
-    }
+    return spd;
+  }
 
   /**
    * Altera a velocidade.
@@ -111,8 +110,8 @@ public class Pokesal {
    * @param spd nova velocidade
    */
   public void setSpd(int spd) {
-        this.spd = spd;
-    }
+    this.spd = spd;
+  }
 
   /**
    * Retorna os pontos de vida máximos.
@@ -120,8 +119,8 @@ public class Pokesal {
    * @return pontos de vida máximos
    */
   public int getHpMax() {
-        return hpMax;
-    }
+    return hpMax;
+  }
 
   /**
    * Altera os pontos de vida máximos.
@@ -129,94 +128,94 @@ public class Pokesal {
    * @param hpMax novos pontos de vida máximos.
    */
   public void setHpMax(int hpMax) {
-        this.hpMax = hpMax;
+    this.hpMax = hpMax;
+  }
+
+  /**
+   * Retorna o tipo elemental.
+   *
+   * @return tipo elemental
+   */
+  public String getTipo() {
+    return tipo;
+  }
+
+  /**
+   * Altera o tipo elemental.
+   *
+   * @param tipo novo tipo elemental
+   */
+  public void setTipo(String tipo) {
+    this.tipo = tipo;
+  }
+
+  /**
+   * Retorna o nome do Pokesal.
+   *
+   * @return nome do Pokesal
+   */
+  public String getNome() {
+    return nome;
+  }
+
+  /**
+   * Altera o nome do Pokesal.
+   *
+   * @param nome novo nome
+   */
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
+
+  /**
+   * Aplica dano ao Pokesal.
+   *
+   * @param dano quantidade de dano recebido
+   */
+  public void danoRecebido(int dano) {
+    hp -= dano;
+
+    if (hp < 0) {
+      hp = 0;
     }
+  }
 
-    /**
-     * Retorna o tipo elemental.
-     *
-     * @return tipo elemental
-     */
-    public String getTipo() {
-        return tipo;
+  /**
+   * Recupera pontos de vida do Pokesal.
+   *
+   * @param quantidade quantidade de vida recuperada
+   */
+  public void curarHp(int quantidade) {
+    hp += quantidade;
+
+    if (hp > hpMax) {
+      hp = hpMax;
     }
+  }
 
-    /**
-     * Altera o tipo elemental.
-     *
-     * @param tipo novo tipo elemental
-     */
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+  /**
+   * Verifica se o Pokesal ainda está vivo.
+   *
+   * @return true se estiver vivo
+   */
+  public boolean estarVivo() {
+    return hp > 0;
+  }
 
-    /**
-     * Retorna o nome do Pokesal.
-     *
-     * @return nome do Pokesal
-     */
-    public String getNome() {
-        return nome;
-    }
+  public boolean isQueimado() {
+    return queimado;
+  }
 
-    /**
-     * Altera o nome do Pokesal.
-     *
-     * @param nome novo nome
-     */
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public void setQueimado(boolean queimado) {
+    this.queimado = queimado;
+  }
 
-    /**
-     * Aplica dano ao Pokesal.
-     *
-     * @param dano quantidade de dano recebido
-     */
-    public void danoRecebido(int dano) {
-        hp -= dano;
+  public boolean isParalizado() {
+    return paralizado;
+  }
 
-        if (hp < 0) {
-            hp = 0;
-        }
-    }
-
-    /**
-     * Recupera pontos de vida do Pokesal.
-     *
-     * @param quantidade quantidade de vida recuperada
-     */
-    public void curarHp(int quantidade) {
-        hp += quantidade;
-
-        if (hp > hpMax) {
-            hp = hpMax;
-        }
-    }
-
-    /**
-     * Verifica se o Pokesal ainda está vivo.
-     *
-     * @return true se estiver vivo
-     */
-    public boolean estarVivo() {
-        return hp > 0;
-    }
-
-    public boolean isQueimado() {
-        return queimado;
-    }
-
-    public void setQueimado(boolean queimado) {
-        this.queimado = queimado;
-    }
-
-    public boolean isParalizado() {
-        return paralizado;
-    }
-
-    public void setParalizado(boolean paralizado) {
-        this.paralizado = paralizado;
-    }
+  public void setParalizado(boolean paralizado) {
+    this.paralizado = paralizado;
+  }
 
 }
