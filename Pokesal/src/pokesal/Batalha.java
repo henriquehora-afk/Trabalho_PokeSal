@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Batalha {
 
-  Random random = new Random();
+  public Random random = new Random();
   Scanner sc;
 
   private Treinador treinador1;
